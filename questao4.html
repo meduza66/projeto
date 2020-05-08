@@ -1,0 +1,153 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    <!-- CSS Topo e Rodapé -->
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <!-- CSS Interno -->
+    <style>
+      td, th {
+        text-align: center;
+      }
+    </style>
+ 
+    <!-- Solução Questão - 04 -->
+    <script>
+      function calcularImc() {
+        nome   = form_imc.nome.value;
+        peso   = form_imc.peso.value;
+        altura = form_imc.altura.value;
+        var nivel;
+        var situaçao;
+        imc=parseFloat(peso)/(parseFloat(altura)*parseFloat(altura));
+
+        if (imc < 18.5){ 
+          nivel= 'Baixo Peso';
+          situaçao= 'Peso baixo para a altura. Maior probabilidade de anorexia.';
+        }
+
+        else if (imc < 24.9){
+          nivel= 'Peso Normal';
+          situaçao='Maior probabilidade de ser um indivíduo saudável.';
+        }
+
+        else if (imc < 29.9){
+          nivel= "Pré-Obesidade";
+          situaçao= 'Alguma probabilidade de problemas de saúde. Predisposição a tornar-se obeso.';
+        }
+
+        else if (imc < 34.9){
+          nivel= 'Obesidade Grau 1';
+          situaçao= 'Risco Moderado de diabetes tipo 2, hipertensão, colesterol, cardiopatia.';
+        }
+
+        else if (imc < 39.9){
+          nivel= 'Obesidade Grau 2';
+          situaçao= 'Risco Grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.';
+        }
+        
+        else{
+          nivel= 'Obesidade Mórbita';
+          situaçao='Risco Muito Grave. O ricso de doenças associadas assim como a mortalidade aumenta 90%.';
+        };
+
+        document.getElementById("nomeA").innerHTML = '<p><b>Nome:</b></p>' +nome;
+        document.getElementById("pesoA").innerHTML = '<p><b>Peso:</b></p>' +peso;
+        document.getElementById("alturaA").innerHTML ='<p><b>Altura:</b></p>' +altura;
+        document.getElementById("imcA").innerHTML ='<p><b>IMC:</b></p>' +imc.toFixed(2);
+        document.getElementById("nivelA").innerHTML = '<p><b>Nível:</b></p>' +nivel;
+        document.getElementById("situacaoA").innerHTML = '<p><b>Problema:</b></p>' +situaçao;
+      }
+        
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
+          <a class="navbar-brand" href="index.html">QUESTÃO 4</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Questões
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="questao1.html">Primeira Questão</a>
+                  <a class="dropdown-item" href="questao2.html">Segunda Questão</a>
+                  <a class="dropdown-item" href="questao3.html">Terceira Questão</a>
+                  <a class="dropdown-item" href="questao4.html">Quarta Questão</a>
+                </div>
+              </li>
+  
+            </ul>
+          </div>
+        </nav>
+        
+                  
+             
+    </header>
+    
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Questão - 04</h1>
+        <p class="lead">programa que calcula o IMC de uma pessoa. <br></p>
+      </div>
+      
+      <form id="form_imc" name="form_imc" method="POST" action="">
+        <div class="row">
+          <div class="col-6">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+            <label>Peso</label>
+            <input type="number" class="form-control" id="peso" name="peso" placeholder="Peso" required>
+            <label>Altura</label>
+            <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura" required>
+            <br>
+            <button onclick="calcularImc()" class="btn btn-danger" type="button">Calcular</button>
+          </div>
+        </form>
+          <div class="col-6">
+            <h5>Resultado:</h5>
+              <p id="nomeA">Nome:</p>
+              <p id="pesoA">Peso:</p>
+              <p id="alturaA">Altura:</p>
+              <p id="imcA">IMC:</p>
+              <p id="nivelA">Nível:</p>
+              <p id="situacaoA">Situação:</p>
+          </div>
+        </div>
+
+ 
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site desenvolvido por Marco Moreira - Code in <a target="_blank" href="#">GitHub</a> </span>
+        </div>
+    </footer>
+
+
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
